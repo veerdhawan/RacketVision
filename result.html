@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RacketVision - Recommendations</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container" id="results">
+<h2>Recommended Rackets</h2>
+<div id="racketSuggestions"></div>
+</div>
+<script>
+const formData = JSON.parse(localStorage.getItem("racketFormData"));
+
+const recommendations = [
+{
+name: "Wilson Blade 98",
+brand: "Wilson",
+fit: "Great for aggressive baseliners looking for control."
+},
+{
+name: "Babolat Pure Strike",
+brand: "Babolat",
+fit: "Ideal for players switching from power-focused rackets to control-oriented rackets."
+},
+{
+name: "Yonex Ezone 98",
+brand: "Yonex",
+fit: "Balanced for offense and defense with arm comfort."
+}
+];
+
+const container = document.getElementById("racketSuggestions");
+recommendations.forEach(r => {
+const div = document.createElement("div");
+div.innerHTML = `<h3>${r.name}</h3><p><strong>Brand:</strong> ${r.brand}</p><p>${r.fit}</p>`;
+container.appendChild(div);
+});
+</script>
+</body>
+</html>
