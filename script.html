@@ -1,0 +1,6 @@
+document.getElementById("racketForm")?.addEventListener("submit", function(event) {
+event.preventDefault();
+const formData = Object.fromEntries(new FormData(event.target).entries());
+localStorage.setItem("racketFormData", JSON.stringify(formData));
+window.location.href = "results.html";
+});
